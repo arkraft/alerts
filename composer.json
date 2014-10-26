@@ -1,6 +1,7 @@
 {
     "name": "arkraft/alerts",
     "description": "Using bootstrap growl to create alerts inside controllers.",
+    "license": "MIT",
     "authors": [
         {
             "name": "Artur Kraft",
