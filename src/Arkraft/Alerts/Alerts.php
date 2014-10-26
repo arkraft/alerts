@@ -8,18 +8,18 @@ class Alerts {
     /**
      * Adds an info message
      *
-     * @param $msg message of the alert
+     * @param string $msg message of the alert
      * @param string $title title of the alert
      * @param array $config configuration for growl
      */
 	public static function addInfo($msg, $title = "", $config = array()) {
-		self::_addAlert('info', $msg, $title, $config);
+		self::_addAlert("info", $msg, $title, $config);
 	}
 
     /**
      * Adds a success message
      *
-     * @param $msg message of the alert
+     * @param string $msg message of the alert
      * @param string $title title of the alert
      * @param array $config configuration for growl
      */
@@ -30,7 +30,7 @@ class Alerts {
     /**
      * Adds a warning message
      *
-     * @param $msg message of the alert
+     * @param string $msg message of the alert
      * @param string $title title of the alert
      * @param array $config configuration for growl
      */
@@ -41,7 +41,7 @@ class Alerts {
     /**
      * Adds a danger message
      *
-     * @param $msg message of the alert
+     * @param string $msg message of the alert
      * @param string $title title of the alert
      * @param array $config configuration for growl
      */
@@ -52,10 +52,10 @@ class Alerts {
     /**
      * Main message to add alerts
      *
-     * @param $class alert class for bootstrap
-     * @param $msg message of the alert
-     * @param $title title of the alert
-     * @param $config configuration for growl
+     * @param string $class alert class for bootstrap
+     * @param string $msg message of the alert
+     * @param string $title title of the alert
+     * @param array $config configuration for growl
      */
     private static function _addAlert($class, $msg, $title, $config) {
         $offset = array_key_exists('offset', $config) ? $config['offset'] : Config::get('alerts::offset');
@@ -68,7 +68,7 @@ class Alerts {
         if($title != "") {
             $msg = '<strong>' . $title . ':</strong> ' . $msg;
         }
-        $newAlert = "$.bootstrapGrowl(" . $msg . ", {
+        $newAlert = "$.bootstrapGrowl('" . $msg . "', {
                         type: '" . $class . "',
                         offset: " . $offset . ",
                         align: " . $align . ",
