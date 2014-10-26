@@ -17,5 +17,5 @@
             "Arkraft\\Alerts": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
