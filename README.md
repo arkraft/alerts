@@ -1,7 +1,7 @@
 alerts
 ======
 
-Laravel 4 Alerts provider to add bootstrap alerts from controllers.
+Laravel 4 Alerts provider to add bootstrap alerts from controllers using the great  [bootstrap-growl](https://github.com/ifightcrime/bootstrap-growl) jquery plugin by Nick Larson.
 
 Installation
 -------------
