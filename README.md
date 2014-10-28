@@ -6,22 +6,22 @@ Laravel 4 Alerts provider to add bootstrap alerts from controllers using the gre
 Installation
 -------------
 Install with composer
-```
+```bash
 composer require arkraft/alerts 0.8.0
 ```
-Next, go to config/app.php and add the following to the providers array
-```
+Register the service provicer in `app/config/app.php` in the providers array
+```php
 'Arkraft\Alerts\AlertsServiceProvider'
 ```
-(Optional) You can add an alias under the alias array in config/app.php
-```
-'Alerts'            => 'Arkraft\Alerts\Alerts',
+Add an alias under the alias array in `app/config/app.php`
+```php
+'Alerts' => 'Arkraft\Alerts\Alerts',
 ```
 And the last step ist to publish the assets. Execute the following command in the root of your project
 ```
 php artisan asset:publish --path="vendor/arkraft/alerts/src/public/" jquery
 ```
-This will add the 'jquery.bootstrap-growl.min.js' to your 'public/packages/jquery' directory.
+This will add the `jquery.bootstrap-growl.min.js` to your `public/packages/jquery` directory.
 Usage
 ---------------
 Now you can add alerts from your controller. The following message types are possible
@@ -40,6 +40,13 @@ Alerts::addInfo("This is a simple info message", "Info");
 ```
 will an the following message
 ![example info message](http://s14.directupload.net/images/141027/s7g5ufrf.png)
+
+### Displaying the alerts
+Add 
+```
+{{ Alerts::getAlerts() }}
+```
+to your sites javascripts.
 
 Configuration
 ------------------
