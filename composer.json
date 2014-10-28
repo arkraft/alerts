@@ -2,6 +2,7 @@
     "name": "arkraft/alerts",
     "description": "Using bootstrap growl to create alerts inside controllers.",
     "license": "MIT",
+    "keywords": ["laravel", "bootstrap", "alerts", "notification"],
     "authors": [
         {
             "name": "Artur Kraft",
