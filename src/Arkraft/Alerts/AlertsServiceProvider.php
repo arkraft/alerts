@@ -12,7 +12,7 @@ class AlertsServiceProvider extends ServiceProvider {
 	protected $defer = false;
 
 	public function boot() {
-		$this->package('arkraft/alerts');
+		$this->addConfigComponent('arkraft/alerts', 'arkraft/alerts', realpath(__DIR__.'/../config'));
 	}
 
 	/**
