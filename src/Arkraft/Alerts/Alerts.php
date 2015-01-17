@@ -94,10 +94,19 @@ class Alerts {
      * @return string
      */
     public static function getAlerts() {
+        $cdn = Config::get('alerts::useCdn');
+        $path = Config::get('alerts::growlPath');
         $alerts = Session::get('Arkraft-Alerts');
         Session::set('Arkraft-Alerts', NULL);
-        return "<script src=\"packages/jquery/jquery.bootstrap-growl.min.js\"></script>" . PHP_EOL .
-        $alerts;
+        if($cdn == true) {
+            return "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js\"></script>" . PHP_EOL . $alerts;
+        } else {
+            if($path == "") {
+                return $alerts;
+            } else {
+                return "<script src=\"" . $path . "\"></script>" . PHP_EOL . $alerts;
+            }
+        }
     }
-
+    
 }

@@ -1,6 +1,8 @@
 <?php 
 
 return array(
+	'useCdn' => true
+	'growlPath' => '',
     'offset' => '{from: "top", amount: 40}',
     'align' => 'right',
     'width' => 250,
